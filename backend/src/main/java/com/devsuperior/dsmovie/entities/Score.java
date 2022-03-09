@@ -1,10 +1,17 @@
 package com.devsuperior.dsmovie.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_score")
 public class Score implements Serializable {
@@ -12,38 +19,14 @@ public class Score implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    private ScorePK id = new ScorePK();
-    private Double value;
+    @Getter private ScorePK id = new ScorePK();
+    @Getter @Setter private Double value;
 
-    public Score() {
-    }
-
-    public Score(ScorePK id, Double value) {
-        this.id = id;
-        this.value = value;
-    }
-
-    public void setMovie(Movie movie){
+    /*public void setMovie(Movie movie){
         id.setMovie(movie);
     }
 
     public void setUser(User user){
         id.setUser(user);
-    }
-
-    public ScorePK getId() {
-        return id;
-    }
-
-    public void setId(ScorePK id) {
-        this.id = id;
-    }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
+    }*/
 }
