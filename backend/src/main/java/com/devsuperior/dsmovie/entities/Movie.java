@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,4 +25,7 @@ public class Movie implements Serializable {
     @Getter @Setter private Double score;
     @Getter @Setter private Integer count;
     @Getter @Setter private String image;
+
+    @OneToMany(mappedBy = "id.movie")
+    @Getter private Set<Score> scores = new HashSet<>();
 }

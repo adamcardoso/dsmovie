@@ -22,11 +22,11 @@ public class Score implements Serializable {
     @Getter private ScorePK id = new ScorePK();
     @Getter @Setter private Double value;
 
-    /*public void setMovie(Movie movie){
+    public void setMovie(Movie movie){
         id.setMovie(movie);
     }
 
     public void setUser(User user){
         id.setUser(user);
-    }*/
+    }
 }
